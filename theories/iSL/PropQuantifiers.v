@@ -537,7 +537,6 @@ Lemma A_simp_env {K : Kind} Δ φ: A p (simp_env Δ, φ) = A p (Δ, φ).
 Proof. unfold A. simp EA. simpl. now rewrite simp_env_idempotent. Qed.
 
 Lemma E_simp_env {K : Kind} Δ : E p (simp_env Δ) = E p Δ.
-(* unfold E, A. simp EA; simpl. *)
 Proof. unfold E; simp EA. simpl. now rewrite simp_env_idempotent. Qed.
 
 Lemma E_left {K : Kind} {Γ θ} {Δ' Δ : list form} {φ : form}: (Δ' = simp_env Δ) -> ∀ (Hin : φ ∈ Δ'),

@@ -26,7 +26,7 @@ destruct HPφ; simpl in Hw.
 - now apply contraction.
 - apply ExFalso.
 - apply AndL_rev in HPψ. do 2 apply IHw in HPψ; trivial; try lia; apply weakening; assumption.
-- apply AndL. apply IHW; auto with proof. order_tac.
+- apply AndL. apply IHW; auto with proof proofRev. order_tac.
 - apply OrL_rev in HPψ; apply (IHw φ); [lia| |]; tauto.
 - apply OrL_rev in HPψ; apply (IHw ψ0); [lia| |]; tauto.
 - apply OrL; apply IHW; auto with proof.

@@ -35,7 +35,6 @@ Qed.
 Lemma top_provable {K : Kind} Γ : Γ ⊢ ⊤.
 Proof. apply ImpR. apply ExFalso. Qed.
 
-(* TODO *)
 Hint Resolve top_provable : proof.
 
 (* Decides whether one formula entails the other or not ; in the latter case return Eq.
@@ -633,7 +632,6 @@ Qed.
 (** Equivalence of the implication optimizations *)
 
 
-(* TODO: suitable name *)
 Lemma tautology_cut {K : Kind} {Γ} {φ ψ θ} :
   Γ • (φ → ψ) ⊢ θ -> (φ ≼ ψ) -> Γ ⊢ θ.
 Proof.
@@ -695,8 +693,8 @@ try (solve[peapply (cut ∅ Γ φ); auto with proof; eapply TopL_rev; eauto]).
 - apply ImpR, additive_cut with (φ:= ψ).
   + now apply ImpR_rev.
   + apply generalised_weakeningL. peapply e.
-- unfold is_negation in *. subst. auto with proof.
-- unfold is_negation in *. subst. auto with proof.
+- unfold is_negation in *. subst. apply ImpR, contraction. auto with proof.
+- unfold is_negation in *. subst. apply ImpR, contraction. auto with proof.
 Qed.
 
 

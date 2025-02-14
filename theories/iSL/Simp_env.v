@@ -160,7 +160,7 @@ Equations contextual_simp_form {K : Kind} : list form -> form -> form :=
     choose_conj (contextual_simp_form (φ2' :: Δ) φ1) φ2';
 | Δ, φ1 ∨ φ2 := choose_disj (contextual_simp_form Δ φ1) (contextual_simp_form Δ φ2);
 | Δ, φ1 → φ2 := choose_impl (contextual_simp_form Δ φ1) (contextual_simp_form (φ1 :: Δ) φ2)
-| Δ, φ => if (Δ ⊢? φ) then ⊤ else φ (* TODO: simplify under box *)
+| Δ, φ => if (Δ ⊢? φ) then ⊤ else φ
 .
 
 (** ** Weight lemmas

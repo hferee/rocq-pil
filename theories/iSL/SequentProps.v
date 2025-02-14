@@ -21,9 +21,7 @@ Logic (65):4.
 Lemma open_boxes_add'
      {K : Kind} (Γ : @env K) (φ : @form K) : (⊗ (Γ • φ)) = (⊗ Γ • ⊙ φ).
 Proof. apply open_boxes_add. Qed.
-(*
-Global Hint Rewrite open_boxes_add' : proof.
-*)
+
 (** We prove the admissibility of the weakening rule. *)
 
 Theorem weakening {K : Kind} φ' Γ φ : Γ ⊢ φ -> Γ•φ' ⊢ φ.
@@ -216,8 +214,7 @@ induction Hp; intros φ0 ψ0 Hin.
 - forward. auto with proof.
 - apply AndR; auto with proof.
 (* the main case *)
-- (* TODO: forward gets stuck there. *)
-  case(decide ((φ ∧ ψ) = (φ0 ∧ ψ0))); intro Heq0.
+- case(decide ((φ ∧ ψ) = (φ0 ∧ ψ0))); intro Heq0.
   + dependent destruction Heq0; subst. peapply Hp.
   + forward. constructor 4. exch 0. backward. backward. apply IHHp. ms.
 (* only left rules remain. Now it's all a matter of putting the right principal
@@ -279,12 +276,8 @@ induction Hp.
 -  assert (Hin' : (φ ∨ ψ) ∈ (⊗ Γ • □ φ0)) by (apply env_in_add; right; eauto with proof).
     split; constructor 14; repeat box_tac; backward; apply open_box_L; now apply IHHp.
 Qed.
-(*
-Lemma open_boxes_spec Γ φ : φ ∈ open_boxes Γ -> {φ ∈ Γ ∧ is_box φ = false} + {(□ φ) ∈ Γ}.
-Admitted.
-  Global Hint Resolve open_boxes_spec : proof.
 
-*)
+
 Lemma TopL_rev {K : Kind} Γ φ θ: Γ•(⊥ → φ) ⊢ θ -> Γ ⊢ θ.
 Proof.
 remember (Γ•(⊥ → φ)) as Γ' eqn:HH.
@@ -458,12 +451,12 @@ induction Hp.
 - apply BoxR. repeat box_tac. backward. apply IHHp. ms.
 Qed.
 
-Global Hint Resolve AndL_rev : proof.
-Global Hint Resolve OrL_rev : proof.
-Global Hint Resolve ImpLVar_rev : proof.
-Global Hint Resolve ImpLOr_rev : proof.
-Global Hint Resolve ImpLAnd_rev : proof.
-Global Hint Resolve ImpLBox_prev : proof.
+Global Hint Resolve AndL_rev : proofRev.
+Global Hint Resolve OrL_rev : proofRev.
+Global Hint Resolve ImpLVar_rev : proofRev.
+Global Hint Resolve ImpLOr_rev : proofRev.
+Global Hint Resolve ImpLAnd_rev : proofRev.
+Global Hint Resolve ImpLBox_prev : proofRev.
 
 
 Lemma exfalso {K : Kind} Γ φ: Γ ⊢ ⊥ -> Γ ⊢ φ.
@@ -501,7 +494,7 @@ Proof. intro Hd. dependent induction Hd; auto using exfalso with proof. Qed.
   *)
 
 Lemma weak_ImpL {K : Kind} Γ φ ψ θ :Γ ⊢ φ -> Γ•ψ ⊢ θ -> Γ•(φ → ψ) ⊢ θ.
-Proof with (auto with proof).
+Proof with (auto with proof proofRev).
 intro Hp. revert ψ θ. induction Hp; intros ψ0 θ0 Hp'.
 - apply ImpLVar, Hp'.
 - auto with proof.
@@ -803,8 +796,6 @@ destruct Hp; simpl in Hleh, Hle.
     ms.
 Qed.
 
-Global Hint Resolve contraction : proof.
-
 Theorem generalised_contraction {K : Kind} (Γ Γ' : env) φ:
   Γ' ⊎ Γ' ⊎ Γ ⊢ φ -> Γ' ⊎ Γ ⊢ φ.
 Proof.
@@ -876,7 +867,6 @@ induction Hp.
   apply env_in_add. right. auto with proof.
 Qed.
 
-Global Hint Resolve imp_cut : proof.
 
 Lemma open_boxes_case Δ : {φ | (□ φ) ∈ Δ} + {Δ ≡ ⊗Δ}.
 Proof.
