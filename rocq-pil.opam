@@ -16,6 +16,7 @@ authors: [
 license: "CECILL-2.1"
 
 depends: [
+  "dune" {>= "3.8"}
   "coq" {>= "8.20.1"}
   "coq-stdpp" {>= "1.11.0"}
   "coq-equations" {}
