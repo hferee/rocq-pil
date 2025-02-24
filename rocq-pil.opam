@@ -1,7 +1,5 @@
 opam-version: "2.0"
 synopsis: "Rocq library for Propositional Intuitionistic Logic & Pitts Interpolation Library"
-description: """
-"""
 
 homepage: "https://github.com/hferee/rocq-pil"
 dev-repo: "git+https://github.com/hferee/rocq-pil.git"
@@ -39,8 +37,8 @@ tags: [
   "keyword:intuitionistic logic"
   "keyword:proof theory"
   "keyword:propositional quantifiers"
-  "category:CS/Algo/Decision procedures"
-  "category:Math/Logic/Foundations"
-  "category:Math/Logic/Modal Logic"
+  "category:Computer Science/Decision Procedures and Certified Algorithms/Decision procedures"
+  "category:Mathematics/Logic/Foundations"
+  "category:Mathematics/Logic/Modal logic"
   "logpath:ISL"
 ]

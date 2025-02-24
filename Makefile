@@ -16,15 +16,6 @@ _: makefile.coq
 makefile.coq:
 	coq_makefile -f _CoqProject -docroot docs -o $@
 
-
-doc: makefile.coq demo
-	rm -fr html docs
-	mkdir docs
-	COQDOCEXTRAFLAGS='--external $(PUBLIC_URL)'
-	@$(MAKE) -f makefile.coq html
-	cp html/* _build/default/bin/uiml_demo.bc.js docs
-	cp $(EXTRA_DIR)/resources/* docs
-
 -include makefile.coq
 
 clean::
