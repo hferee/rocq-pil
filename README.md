@@ -1,9 +1,7 @@
 # Mechanized Uniform Interpolation in Intuitionistic and Modal Logics
 
-This project formalizes the construction of uniform interpolants for basic
-modal logic K, Gödel-Löb provability logic GL, and intuitionistic strong Löb
-logic iSL. The latter includes the calculation of uniform interpolants for
-intuitionistic logic IL.
+This project formalizes the construction of uniform interpolants for
+intuitionistic propotitional logic IL and intuitionistic strong Löb logic iSL.
 
 ## Online calculator
 
@@ -17,34 +15,23 @@ various logics listed above.
 This calculator was built by extracting the relevant Coq functions to OCaml code, which is then
 further compiled to Javascript.
 
-## Building
+## Building and installing
 
-Compiling the project requires Coq version 8.19.2 and may not compile on other versions. One may enforce this locally by running
-`opam pin coq 8.19.2` in the project folder.
+### Via the opam repository
 
-There is a rudimentary install script `install.sh` in this folder.
+The stable version of the library is available as packge `coq-pil` in the opam
+repository for Coq packages.
 
-### Dependencies
+### Using opam in the git repository
 
-The proof library depends on `coq` and `coq-stdpp`.
+Installing the latest version of the library from the git repository can be
+achieved using opam: `opam install .`
 
-Building the demo further requires `js_of_ocaml` and `angstrom`.
+### Manually
 
-All of the above are available on `opam`.
-
-### Instruction
-
-The proof library compiles with `make`.
-The documentation builds with `make doc`.
-
-## Command Line Tools
-
-Aside from the online demo, we provide a set of command line tools. Running them with no arguments will print a description.
-
-- `uiml_cmdline s n` : Computes the uniform interpolants of `n` formulas chosen from an enumeration, with `s` being the start index of that enumeration.
-- `isl_simp f` : Simplifies the formula `f` in iSL.
-- `isl_dec f` : Decides the provability of the modal formula `f` in iSL.
-- `benchmark` : Runs a set of benchmarks.
+Follow the opam package file `coq-pil.opam` to manually install the dependencies.
+Then build with `make` and install with `make install`.
+The documentation is built using `make doc`.
 
 ## Documentation
 
