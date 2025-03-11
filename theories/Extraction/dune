@@ -1,0 +1,8 @@
+(coq.extraction
+(prelude Extraction)
+(extracted_modules Ascii base Classes Compare_dec Datatypes DecisionProcedure Environments EqdepFacts Equality Extraction Formulas Init list0 List Nat numbers Optimizations Order PropQuantifiers Simp_env Simplifications Specif String strings)
+(theories PIL stdpp Equations)
+)
+(library
+ (name PIL)
+)
