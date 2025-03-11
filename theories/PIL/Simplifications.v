@@ -1,4 +1,4 @@
-Require Import ISL.Sequents ISL.SequentProps ISL.Order ISL.Optimizations ISL.Cut.
+Require Import PIL.Sequents PIL.SequentProps PIL.Order PIL.Optimizations PIL.Cut.
 
 (* Definitions and properties about equivalent formulas and environments *)
 Section Equivalence.

@@ -7,11 +7,11 @@ maintaining intuitionistic equivalence.
 
 Require Import Coq.Program.Equality.
 Require Import Coq.Classes.RelationClasses.
-Require Import ISL.Sequents ISL.SequentProps.
-Require Import ISL.Order ISL.DecisionProcedure.
-Require Import ISL.Cut.
-Require Import ISL.Optimizations. (* NB This import must come last. *)
-Require Import ISL.Simplifications.
+Require Import PIL.Sequents PIL.SequentProps.
+Require Import PIL.Order PIL.DecisionProcedure.
+Require Import PIL.Cut.
+Require Import PIL.Optimizations. (* NB This import must come last. *)
+Require Import PIL.Simplifications.
 From Equations Require Import Equations.
 
 

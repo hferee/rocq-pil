@@ -27,7 +27,11 @@ clean::
 #SOURCE_ROOT=extraction
 #BUILD_PATTERNS := *.ml *.mli
 #SOURCES=$(addprefix $(SOURCE_ROOT)/,$(BUILD_PATTERNS))
-#RESULT=extraction/UIML_extraction
+#RESULT=extraction/PIL
+
+bin: theories/PIL/extraction.vo bin/pil_cmdline.ml
+	dune build
+
 
 #-include OCamlMakefile
 

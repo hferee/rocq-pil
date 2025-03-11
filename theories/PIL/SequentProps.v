@@ -1,4 +1,4 @@
-Require Import ISL.Sequents.
+Require Import PIL.Sequents.
 
 (* Required for dependent induction. *)
 Require Import Coq.Program.Equality.

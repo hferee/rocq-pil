@@ -11,7 +11,7 @@ Require Import Coq.Program.Wf.
 Require Export stdpp.gmultiset.
 
 (** Our propositional formulas, including their countability. *)
-Require Export ISL.Formulas.
+Require Export PIL.Formulas.
 
 Require Import Coq.Program.Equality.
 

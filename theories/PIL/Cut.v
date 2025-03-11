@@ -1,6 +1,6 @@
 (** * Cut Admissibility *)
-Require Import ISL.Formulas ISL.Sequents ISL.Order.
-Require Import ISL.SequentProps .
+Require Import PIL.Formulas PIL.Sequents PIL.Order.
+Require Import PIL.SequentProps .
 Require Import Coq.Program.Equality.
 
 Local Hint Rewrite @elements_env_add : order.

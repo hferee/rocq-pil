@@ -1,5 +1,5 @@
 (** * Decision Procedure *)
-Require Import ISL.Sequents ISL.SequentProps ISL.Order.
+Require Import PIL.Sequents PIL.SequentProps PIL.Order.
 Require Import Coq.Program.Equality.
 
 (**

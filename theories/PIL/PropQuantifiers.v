@@ -11,10 +11,10 @@ It consists of two parts:
 
 2) a proof of its correctness. *)
 
-Require Import ISL.Sequents ISL.Formulas.
-Require Import ISL.SequentProps ISL.Order ISL.Optimizations.
+Require Import PIL.Sequents PIL.Formulas.
+Require Import PIL.SequentProps PIL.Order PIL.Optimizations.
 Require Import Coq.Program.Equality. (* for dependent induction *)
-Require Import ISL.Simplifications.
+Require Import PIL.Simplifications.
 From Equations Require Import Equations.
 
 (* We define propositional quantifiers given a simplification method

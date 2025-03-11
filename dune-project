@@ -1,31 +1,29 @@
 (lang dune 3.8)
+(using coq 0.8)
 
-(name rocq-pil)
-
-(generate_opam_files true)
+(name coq-pil)
 
 (source
- (github hferee/UIML))
+ (github hferee/rocq-pil))
 
 (authors "Hugo Férée"
          "Sam van Gool"
-         "Yago Iglesias Vasquez")
+         "Pablo Iglesias Vasquez")
 
 (maintainers "Hugo Férée")
 
 (license CecILL)
 
-(homepage https://hferee.github.io/)
+(homepage https://hferee.github.io/UIML)
 (documentation https://hferee.github.io/UIML/toc.html)
 
-(using coq 0.8)
 
 (package
- (name rocq-pil)
- (synopsis "Propositional Intuitionistic Logic - Pitts Interpolation Library")
+ (name coq-pil)
+ (synopsis "Propositional quantifiers for modal logics formalised")
  (description "")
  (allow_empty)
- (depends ocaml dune coq-stdpp coq-equations)
+ (depends ocaml dune coq-stdpp angstrom exenum)
  (tags
   (coq "intuitionistic logic" "proof theory" "propositional quantifiers" "extraction")))
 

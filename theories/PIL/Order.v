@@ -1,5 +1,5 @@
 (** * Ordering *)
-Require Export ISL.Environments.
+Require Export PIL.Environments.
 Require Import Coq.Program.Equality.
 
 (* Note 3 or 4 would suffice for IPC ; iSL requires 5 *)
