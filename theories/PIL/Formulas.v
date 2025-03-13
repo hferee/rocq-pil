@@ -49,7 +49,7 @@ Infix " φ ⇔ ψ " := (And (Implies φ ψ) (Implies ψ φ)) (at level 100).
 
 Global Instance fomula_bottom {K : Kind} : base.Bottom form := Bot.
 
-Global Coercion Var: variable >-> form.
+#[warnings="-uniform-inheritance"]Global Coercion Var: variable >-> form.
 
 Global Instance form_top {K : Kind} : base.Top form := ⊤.
 
